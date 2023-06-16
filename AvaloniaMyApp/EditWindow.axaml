@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="350" Height="400" CanResize="False"
+        x:Class="AvaloniaMyApp.EditWindow"
+        Title="Registration">
+    <StackPanel Orientation="Vertical"
+                Margin="25"
+                VerticalAlignment="Center" >
+        <TextBox Name="LoginTBox"
+                 Watermark="Enter login"
+                 Margin="0 0 0 10"/>
+        <TextBox Name="PasswordTBox"
+                 Watermark="Enter password"
+                 PasswordChar="*"
+                 Margin="0 0 0 10"/>
+        <TextBox Name="NameTBox"
+                 Watermark="Enter first name"
+                 Margin="0 0 0 10"/>
+        <TextBox Name="SurnameTBox"
+                 Watermark="Enter second name"
+                 Margin="0 0 0 10"/>
+        <TextBox Name="PhonenumberTBox"
+                 Watermark="Enter number phone"
+                 Margin="0 0 0 10"/>
+        <ComboBox Name="RoleCBox"
+                  Margin="0 0 0 30"
+                  Width="300">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+            
+        <Button Content="Change"
+                HorizontalAlignment="Center"
+                Margin="0 0 0 10"
+                Name="RegBtn"
+                Click="EditBtn_OnClick"/>
+        <Button Content="Cancel"
+                HorizontalAlignment="Center"
+                Name="BackBtn"
+                Click="BackBtn_OnClick"/>
+    </StackPanel>
+</Window>
